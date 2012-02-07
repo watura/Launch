@@ -15,6 +15,7 @@
 		418E0215149E08C900B807CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 418E0214149E08C900B807CE /* AppDelegate.m */; };
 		418E0218149E08C900B807CE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418E0216149E08C900B807CE /* MainStoryboard.storyboard */; };
 		418E021B149E08C900B807CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418E021A149E08C900B807CE /* ViewController.m */; };
+		41EE573F14DFF35800C61593 /* addVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EE573E14DFF35800C61593 /* addVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +23,17 @@
 		418E0204149E08C900B807CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		418E0206149E08C900B807CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		418E0208149E08C900B807CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		418E020C149E08C900B807CE /* Launch-Info.plist */ = {isa = PBXFileReference; path = "Launch-Info.plist"; sourceTree = "<group>"; };
+		418E020C149E08C900B807CE /* Launch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Launch-Info.plist"; sourceTree = "<group>"; };
 		418E020E149E08C900B807CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		418E0210149E08C900B807CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		418E0212149E08C900B807CE /* Launch-Prefix.pch */ = {isa = PBXFileReference; path = "Launch-Prefix.pch"; sourceTree = "<group>"; };
-		418E0213149E08C900B807CE /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		418E0212149E08C900B807CE /* Launch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Launch-Prefix.pch"; sourceTree = "<group>"; };
+		418E0213149E08C900B807CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		418E0214149E08C900B807CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		418E0217149E08C900B807CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		418E0219149E08C900B807CE /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		418E0219149E08C900B807CE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		418E021A149E08C900B807CE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		41EE573D14DFF35800C61593 /* addVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addVC.h; sourceTree = "<group>"; };
+		41EE573E14DFF35800C61593 /* addVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				418E0216149E08C900B807CE /* MainStoryboard.storyboard */,
 				418E0219149E08C900B807CE /* ViewController.h */,
 				418E021A149E08C900B807CE /* ViewController.m */,
+				41EE573D14DFF35800C61593 /* addVC.h */,
+				41EE573E14DFF35800C61593 /* addVC.m */,
 				418E020B149E08C900B807CE /* Supporting Files */,
 			);
 			path = Launch;
@@ -164,6 +169,7 @@
 				418E0211149E08C900B807CE /* main.m in Sources */,
 				418E0215149E08C900B807CE /* AppDelegate.m in Sources */,
 				418E021B149E08C900B807CE /* ViewController.m in Sources */,
+				41EE573F14DFF35800C61593 /* addVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,10 +243,12 @@
 		418E021F149E08C900B807CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wataru Nishimoto (B3S79U9CEE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Launch/Launch-Prefix.pch";
 				INFOPLIST_FILE = "Launch/Launch-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D991B1E4-187F-467E-AD38-F33EC6E8B039";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -248,10 +256,12 @@
 		418E0220149E08C900B807CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wataru Nishimoto (B3S79U9CEE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Launch/Launch-Prefix.pch";
 				INFOPLIST_FILE = "Launch/Launch-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D991B1E4-187F-467E-AD38-F33EC6E8B039";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -275,6 +285,7 @@
 				418E0220149E08C900B807CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

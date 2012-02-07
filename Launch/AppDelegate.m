@@ -12,12 +12,42 @@
 
 @synthesize window = _window;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"didFinish:%@",launchOptions);
+    i = 0;
     // Override point for customization after application launch.
+    if (launchOptions != nil) {
+        NSLog(@"LaunchOptions");
+        //Launch *lnc = [[Launch alloc] init];
+        NSURL* url = [NSURL URLWithString:[launchOptions objectForKey:@"action"]];
+        //if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        //}
+        //[lnc addNotification];
+    
+    }
     return YES;
 }
-							
+
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    NSLog(@"didRecive");
+    NSLog(@"%@",notification);
+    //Launch *lnc = [[Launch alloc] init];
+    if (i == 1) {
+        NSURL* url = [NSURL URLWithString:[[notification userInfo] objectForKey:@"action"]];
+        i = 0;
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+        NSLog(@"%@",url);
+    }
+
+    //[lnc addNotification];
+    
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*
@@ -28,6 +58,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    i = 0;
     /*
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -36,6 +67,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    NSLog(@"Forground");
+    i++;
     /*
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
      */
